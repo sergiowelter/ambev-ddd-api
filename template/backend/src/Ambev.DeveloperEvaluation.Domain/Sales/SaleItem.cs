@@ -41,6 +41,8 @@ namespace Ambev.DeveloperEvaluation.Domain.Sales
         {
             if (Quantity > 20)
                 throw new InvalidOperationException("It is not possible to sell more than 20 identical items.");
+            else if (Quantity <= 0)
+                throw new Exception("Quantity must be greater than zero");
 
             if (Quantity < 4)
                 Discount = 0m;
